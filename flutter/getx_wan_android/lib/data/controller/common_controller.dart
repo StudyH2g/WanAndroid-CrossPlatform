@@ -1,0 +1,8 @@
+import 'package:get/get.dart';
+import 'package:getx_wan_android/data/response/common_website.dart';
+import 'package:getx_wan_android/data/response/search_hot_word.dart';
+
+class CommonController extends GetxController {
+  RxList<SearchHotWord> words = <SearchHotWord>[].obs;
+  RxList<CommonWebsite> websites = <CommonWebsite>[].obs;
+}

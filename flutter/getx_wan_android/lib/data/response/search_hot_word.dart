@@ -1,0 +1,18 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'search_hot_word.g.dart';
+
+@JsonSerializable()
+class SearchHotWord {
+  int id;
+  String link;
+  String name;
+  int order;
+  int visible;
+
+  SearchHotWord(this.id, this.link, this.name, this.order, this.visible);
+
+  factory SearchHotWord.fromJson(Map<String, dynamic> json) =>
+      _$SearchHotWordFromJson(json);
+  Map<String, dynamic> toJson() => _$SearchHotWordToJson(this);
+}

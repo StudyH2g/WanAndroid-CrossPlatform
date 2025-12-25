@@ -1,0 +1,1 @@
+D:\Android\flutter\project\getx_wan_android\build\app\intermediates\cxx\Debug\6t2m3e4v\obj\arm64-v8a

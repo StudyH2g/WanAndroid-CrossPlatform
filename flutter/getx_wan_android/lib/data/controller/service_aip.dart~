@@ -1,0 +1,29 @@
+import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:getx_wan_android/constants/url_constant.dart';
+import 'package:getx_wan_android/data/response/home_article_data.dart';
+import 'package:getx_wan_android/data/response/home_article_list.dart';
+import 'package:getx_wan_android/data/response/home_banner_data.dart';
+import 'package:getx_wan_android/data/response/home_banner_list.dart';
+import 'package:getx_wan_android/http/dio_clients.dart';
+
+class ServiceApi {
+  ServiceApi._();
+
+  static final ServiceApi instance = ServiceApi._();
+
+  Future<List<HomeBannerData>> getHomeBanners() async {
+    Response response = await DioClients.instance.get(UrlConstant.homeBanners);
+    debugPrint("getHomeBanners.data:${response.data is Map<String, dynamic>}");
+    var bannerList = HomeBannerList.fromJson(response.data);
+    return bannerList.data;
+  }
+
+  Future<List<HomeArticleData>> getHomeArticles(int page) async {
+    Response response =
+        await DioClients.instance.get('article/list/$page/json');
+    debugPrint("HomeArticleData.data:${response.data}");
+    var articleList = HomeArticleList.fromJson(response.data);
+    return articleList.datas;
+  }
+}

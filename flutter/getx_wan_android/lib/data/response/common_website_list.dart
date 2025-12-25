@@ -1,0 +1,16 @@
+import 'package:getx_wan_android/data/response/common_website.dart';
+import 'package:json_annotation/json_annotation.dart';
+
+part 'common_website_list.g.dart';
+
+@JsonSerializable()
+class CommonWebsiteList {
+  List<CommonWebsite> data;
+
+  CommonWebsiteList(this.data);
+
+  factory CommonWebsiteList.fromJson(Map<String, dynamic> json) =>
+      _$CommonWebsiteListFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CommonWebsiteListToJson(this);
+}

@@ -1,0 +1,22 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'home_article_data.g.dart';
+
+@JsonSerializable()
+class HomeArticleData {
+  String author;
+  String chapterName;
+  String shareUser;
+  String link;
+  String niceDate;
+  String title;
+  int id;
+
+  HomeArticleData(this.author, this.chapterName, this.shareUser, this.link,
+      this.niceDate, this.title, this.id);
+
+  factory HomeArticleData.fromJson(Map<String, dynamic> json) =>
+      _$HomeArticleDataFromJson(json);
+
+  Map<String, dynamic> toJson() => _$HomeArticleDataToJson(this);
+}

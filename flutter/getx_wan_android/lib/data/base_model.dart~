@@ -1,0 +1,33 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'base_model.g.dart';
+
+@JsonSerializable()
+class BaseModel {
+  int? errorCode;
+  dynamic data;
+  BaseModel(this.errorCode, this.data);
+
+  factory BaseModel.fromJson(Map<String, dynamic> json) =>
+      _$BaseModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$BaseModelToJson(this);
+
+  bool isSuccess() => errorCode == 0;
+  bool notLogin() => errorCode == -1001;
+}
+
+//class BaseModel<T> {
+//   int? errorCode;
+//   T? data;
+//   BaseModel(this.errorCode, this.data);
+//
+//   factory BaseModel.fromJson(
+//           Map<String, dynamic> json, T Function(Object? json) fromJsonT) =>
+//       _$BaseModelFromJson<T>(json, fromJsonT);
+//
+//   Map<String, dynamic> toJson(Object? Function(T value) toJsonT) =>
+//       _$BaseModelToJson<T>(this, toJsonT);
+//
+//   bool isSuccess() => errorCode == 0;
+// }

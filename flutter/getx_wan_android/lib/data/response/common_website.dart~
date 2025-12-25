@@ -1,0 +1,26 @@
+//            "category": "源码",
+//             "icon": "",
+//             "id": 22,
+//             "link": "https://www.androidos.net.cn/sourcecode",
+//             "name": "androidos",
+//             "order": 11,
+//             "visible": 1
+import 'package:json_annotation/json_annotation.dart';
+
+part 'common_website.g.dart';
+
+@JsonSerializable()
+class CommonWebsite {
+  String category;
+  String icon;
+  int id;
+  String link;
+  String name;
+  int order;
+  int visible;
+
+  CommonWebsite(this.category, this.icon, this.id, this.link, this.name, this.order, this.visible);
+
+  factory CommonWebsite.fromJson(Map<String, dynamic> json) => _$CommonWebsiteFromJson(json);
+  Map<String, dynamic> toJson() => _$CommonWebsiteToJson(this);
+}

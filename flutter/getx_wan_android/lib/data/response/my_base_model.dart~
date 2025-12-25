@@ -1,0 +1,21 @@
+class MyBaseModel<T> {
+  T? data;
+  int? errorCode;
+
+  MyBaseModel(this.errorCode, this.data);
+
+  MyBaseModel.fromJson(Map<String, dynamic> json) {
+    // debugPrint(
+    //     "json['errorCode000']: ${json['errorCode']}; json['data']: ${json['data']}");
+    // debugPrint(
+    //     "json['errorCode111']: ${json['errorCode'] is num}; ${(json['errorCode'] as num).toInt()}");
+    // MyBaseModel<T>(
+    //   json['errorCode'] != null && json['errorCode'] is num
+    //       ? (json['errorCode'] as num).toInt()
+    //       : null,
+    //   json['data'] as T?,
+    // );
+    data = json['data'];
+    errorCode = json['errorCode'];
+  }
+}

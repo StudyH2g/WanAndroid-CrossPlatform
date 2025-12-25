@@ -1,0 +1,6 @@
+class UrlConstant {
+  static const String baseUrl = "https://www.wanandroid.com/";
+  static const String homeBanners = "banner/json";
+  static const String commonWebsites = "friend/json";
+  static const String hotKeys = "hotkey/json";
+}
